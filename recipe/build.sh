@@ -1,12 +1,6 @@
 #!/bin/sh
 
-# export CC=${PREFIX}/bin/h5cc
-# export CXX=${PREFIX}/bin/h5c++
-# export DYLD_FALLBACK_LIBRARY_PATH=${PREFIX}/lib
-# export CFLAGS="-fPIC"
-
-# export HDF5_LDFLAGS="-L ${PREFIX}/lib"
-
+autoreconf -vfi
 ./configure --prefix=${PREFIX} \
             --build=${BUILD} \
             --host=${HOST} \
@@ -15,9 +9,9 @@
             --enable-shared=yes \
             --enable-static=no
 
-make
-make check
+make -j${CPU_COUNT}
 make install
+make check
 
 pushd include
 make install-includeHEADERS
