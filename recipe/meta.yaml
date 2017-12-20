@@ -19,9 +19,10 @@ source:
 build:
   number: 8
   skip: True  # [win]
-  run_exports:
-    # no info.  Leaving at minor.
-    - {{ pin_subpackage('hdfeos5', max_pin='x.x') }}
+  # static libs.  No run_exports.
+  # run_exports:
+  #   # no info.  Leaving at minor.
+  #   - {{ pin_subpackage('hdfeos5', max_pin='x.x') }}
 
 requirements:
   build:

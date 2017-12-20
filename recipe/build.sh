@@ -5,9 +5,7 @@ autoreconf -vfi
             --build=${BUILD} \
             --host=${HOST} \
             --with-hdf5=${PREFIX} \
-            --with-zlib=${PREFIX} \
-            --enable-shared=yes \
-            --enable-static=no
+            --with-zlib=${PREFIX}
 
 make -j${CPU_COUNT}
 make install
